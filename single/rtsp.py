@@ -1,11 +1,12 @@
 import cv2
 
 # Alamat RTSP stream
-rtsp_url = 'rtsp://admin:IGMYQO@192.168.1.51:554/Streaming/Channels/101/'
+rtsp_url = 'rtsp://admin:IGMYQO@192.168.1.49:554/Streaming/Channels/101/'
 
 # Buka koneksi ke stream RTSP
 cap = cv2.VideoCapture(rtsp_url)
 
+human_cascade = cv2.CascadeClassifier('haarcascade_fullbody.xml')
 while True:
     # Ambil frame dari stream
     ret, frame = cap.read()
@@ -14,6 +15,13 @@ while True:
         print("Tidak bisa membaca frame dari stream.")
         break
 
+    # Our operations on the frame come here
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    humans = human_cascade.detectMultiScale(gray, 1.9, 1)
+
+    # Display the resulting frame
+    for (x, y, w, h) in humans:
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
     # Tampilkan frame
     cv2.imshow('RTSP Stream', frame)
 

@@ -9,7 +9,7 @@ def index():
     return 'hello flask'
 
 
-@app.route("/html")
+@app.route("/cctv")
 def index2():
     return render_template("index.html")
 
