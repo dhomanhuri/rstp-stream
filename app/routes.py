@@ -6,7 +6,7 @@ from flask import Response, render_template
 
 @app.route('/')
 def index():
-    return 'hello flask'
+    return render_template("index.html")
 
 
 @app.route("/cctv")
