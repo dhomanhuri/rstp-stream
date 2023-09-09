@@ -6,11 +6,11 @@
     <title>AdminLTE 3 | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fontawesome-free/css/all.min.css')}}" />
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')}}" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}" />
     <!-- iCheck -->
@@ -45,10 +45,19 @@
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ url_for('static', filename='index3.html')}}" class="nav-link">Home</a>
+            <a href="/" class="nav-link">Home</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">Live Streaming</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Recording</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Configuration</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link btn btn-danger text-light">Logout</a>
           </li>
         </ul>
       </nav>
@@ -78,13 +87,13 @@
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item">
-                <a href="{{ url_for('static', filename='pages/gallery.html')}}" class="nav-link">
+                <a href="/all" class="nav-link {% if submenu == 'all' %} active {% endif %}">
                   <i class="nav-icon far fa-image"></i>
                   <p>All Camera</p>
                 </a>
               </li>
-              <li class="nav-item menu-open">
-                <a href="{{ url_for('static', filename='#')}}" class="nav-link active">
+              <li class="nav-item {% if menu == 'master' %} menu-open {% endif %}">
+                <a href="" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Select Camera
@@ -93,19 +102,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ url_for('static', filename='#')}}" class="nav-link active">
+                    <a href="/cam1" class="nav-link {% if submenu == 'cam1' %} active {% endif %}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Camera 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ url_for('static', filename='#')}}" class="nav-link">
+                    <a href="/cam2" class="nav-link {% if submenu == 'cam2' %} active {% endif %}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Camera 2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ url_for('static', filename='#')}}" class="nav-link">
+                    <a href="/cam3" class="nav-link {% if submenu == 'cam3' %} active {% endif %}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Camera 3</p>
                     </a>

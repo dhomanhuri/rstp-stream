@@ -1,13 +1,12 @@
 import cv2
 import imutils
 
-camera = cv2.VideoCapture(
-    "rtsp://admin:IGMYQO@192.168.1.49:554/Streaming/Channels/101/")
 
-human_cascade = cv2.CascadeClassifier('haarcascade_fullbody.xml')
+def gen_frames(ip):
+    camera = cv2.VideoCapture(
+        "rtsp://admin:IGMYQO@"+ip+":554/Streaming/Channels/101/")
 
-
-def gen_frames():
+    human_cascade = cv2.CascadeClassifier('haarcascade_fullbody.xml')
     while True:
         success, frame = camera.read()  # read the camera frame
 

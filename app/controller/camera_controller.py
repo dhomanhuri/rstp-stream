@@ -1,0 +1,28 @@
+from app.model.camera import Camera
+
+from app import response, app, db
+from flask import request, render_template
+
+
+def index():
+    try:
+        cameras = Camera.query.all()
+        data = serialize_cameras(cameras)
+        # return response.success(data, "success")
+        return render_template("all.html", menu='none', submenu='all', data=data)
+
+    except Exception as e:
+        print(e)
+
+
+def serialize_cameras(cameras):
+    return [
+        {
+            'id': camera.id,
+            'name': camera.name,
+            'ip': camera.ip,
+            'created_at': camera.created_at,
+            'updated_at': camera.updated_at
+        }
+        for camera in cameras
+    ]
