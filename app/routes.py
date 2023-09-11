@@ -1,7 +1,7 @@
 from app import app
-from app.controller import rtsp_controller, camera_controller, camera1_controller
+from app.controller import auth_controller, rtsp_controller, camera_controller, camera1_controller
 
-from flask import Response, render_template
+from flask import Response, render_template, request
 
 
 @app.route('/')
@@ -9,9 +9,15 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/login')
+@app.route('/login', methods=['POST','GET'])
 def login():
-    return render_template("login.html")
+    if request.method == 'POST':
+        return auth_controller.login()
+    # return render_template("login.html")
+
+@app.route('/register', methods=['POST'])
+def register():
+    return auth_controller.register()
 
 
 @app.route('/cam1')
