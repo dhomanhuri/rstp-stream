@@ -8,5 +8,7 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+app.secret_key = Config.KEY
+
 from app.model import user, camera
 from app import routes

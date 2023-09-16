@@ -25,6 +25,42 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/daterangepicker/daterangepicker.css')}}" />
     <!-- summernote -->
     <link rel="stylesheet" href="{{ url_for('static', filename='plugins/summernote/summernote-bs4.min.css')}}" />
+    <!-- <style>
+      .image-modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+      }
+
+      .modal-content {
+        position: relative;
+        background-color: #fff;
+        text-align: center;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .modal-content img {
+        max-width: 100%;
+        max-height: 80vh;
+      }
+    </style> -->
   </head>
   <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -48,16 +84,19 @@
             <a href="/" class="nav-link">Home</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Live Streaming</a>
+            <a href="/all" class="nav-link">Live Streaming</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Recording</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Configuration</a>
+            <a href="/galery" class="nav-link">Galery</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link btn btn-danger text-light">Logout</a>
+            <a href="/config" class="nav-link">Configuration</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="/logout" class="nav-link btn btn-danger text-light">Logout</a>
           </li>
         </ul>
       </nav>

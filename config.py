@@ -15,3 +15,4 @@ class Config(object):
         USERNAME+":"+PASSWORD+"@"+HOST+"/"+DATABASE
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
+    KEY = "xxxxxxxxx"

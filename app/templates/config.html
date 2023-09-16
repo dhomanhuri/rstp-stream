@@ -1,0 +1,90 @@
+{%include 'header.html' %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid text-center">
+      <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Login Account</h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form  action="/update_account" method="post">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+              </div>
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary mb-2">Submit</button><br>
+              {% if account %}
+                {{account}}
+              {% endif %}
+            </div>
+          </form>
+        </div>
+        {% if account_cam1 %}
+          {{account_cam1 }}
+        {% endif %}
+        {% for i in range(3) %}
+        <div class="card card-info">
+          <div class="card-header">
+            <h3 class="card-title">camera {{i+1}}</h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form action="/config_cam/{{i+1}}" method="post">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="text" name='name' class="form-control" id="" placeholder="Enter Name" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">IP</label>
+                <input type="text" name='ip' class="form-control" id="" placeholder="Enter IP" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text"  name='username'  class="form-control" id="" placeholder="Enter Username" />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" name='password'  class="form-control" id="exampleInputPassword1" placeholder="Password" />
+              </div>
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+              <button type="submit" class="btn btn-info">Submit</button><br>
+              
+            </div>
+          </form>
+        </div>
+        {% endfor %}
+        
+        <!-- /.card -->
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid"></div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  {%include 'footer.html' %}
+</div>

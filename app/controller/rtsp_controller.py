@@ -1,5 +1,6 @@
 import cv2
 import imutils
+import datetime
 
 
 def gen_frames(ip):
@@ -24,8 +25,15 @@ def gen_frames(ip):
             # Mencoba mendeteksi manusia
             # # Display the resulting frame
             for (x, y, w, h) in humans:
-                cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
+                print("menusia didetekdsi")
+                try:
+                    cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
+                    current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+                    filename = f"app/static/human/human_{current_time}.jpg"
+                    cv2.imwrite(filename, frame)
 
+                except Exception as e:
+                    print(f"Error saat mendeteksi smanusia: {e}")
             if not success:
                 break
             else:

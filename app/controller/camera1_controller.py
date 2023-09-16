@@ -8,7 +8,6 @@ def index():
     try:
         cameras = Camera.query.get(1)
         data = serialize_cameras(cameras)
-        # return response.success(data, "success")
         return render_template("cam1.html", menu='master', submenu='cam1', data=data)
 
     except Exception as e:
