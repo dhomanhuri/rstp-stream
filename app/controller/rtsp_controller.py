@@ -5,7 +5,7 @@ import datetime
 
 def gen_frames(ip):
     camera = cv2.VideoCapture(
-        "rtsp://admin:IGMYQO@"+ip+":554/Streaming/Channels/101/")
+        "rtsp://admin:IGMYQO@"+ip+"/Streaming/Channels/101/")
 
     human_cascade = cv2.CascadeClassifier('haarcascade_fullbody.xml')
     while True:

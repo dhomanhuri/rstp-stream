@@ -1,7 +1,7 @@
 import cv2
 
 # Alamat RTSP stream
-rtsp_url = 'rtsp://admin:IGMYQO@id24.tunnel.my.id:3454//Streaming/Channels/101/'
+rtsp_url = 'rtsp://admin:IGMYQO@id24.tunnel.my.id:3454/Streaming/Channels/101/'
 
 # Buka koneksi ke stream RTSP
 cap = cv2.VideoCapture(rtsp_url)
