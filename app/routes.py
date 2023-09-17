@@ -8,6 +8,7 @@ from flask import Response, render_template, request
 def index():
     return render_template("index.html")
 
+
 @app.route('/bak')
 def indexbak():
     return render_template("bakindex.html")

@@ -20,7 +20,7 @@ def login():
 
     cameras = Camera.query.all()
     data = serialize_cameras(cameras)
-    return render_template("all.html", menu='none', submenu='all', data=data)
+    return render_template("index.html", menu='none', submenu='none',)
 
 
 def logout():
